@@ -33,11 +33,11 @@ Several additional funtionalities can be attached to the existing app.  To impro
 
 The app is hosted on Glitch.
 
-Sacred Hall: [https://meditation-cean-nd.glitch.me/](https://meditation-cean-nd.glitch.me/)
+Sacred Hall:[https://marvelous-error.glitch.me/](https://marvelous-error.glitch.me/)
 ![Sacred Hall logo](https://github.com/anukritijha246/Virtuary/blob/master/Virtuary/Sacred%20Hall/Sacred_Hall_logo.jpg?raw=true)
 
 
-Tranquil. io: [https://marvelous-error.glitch.me/](https://marvelous-error.glitch.me/)
+Tranquil. io:[https://meditation-cean-nd.glitch.me/](https://meditation-cean-nd.glitch.me/)
 ![Meditation logo](https://github.com/anukritijha246/Virtuary/blob/master/Virtuary/Tranquil.io/Tranquil.io_logo.jpg?raw=true)
 
 
