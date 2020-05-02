@@ -1,0 +1,9 @@
+For a basic non-VR experience — A WebGL enabled browser.
+
+For a desktop VR experience —
+A browser build with WebVR support such as the latest Chromium WebVR build or Firefox Nightly.
+An Oculus Rift headset (maybe the HTC Vive too).
+
+For a mobile VR experience — 
+Most modern smartphones will be capable of at least showing the scene and allowing you to look around in a semi-VR view (one without the headset itself but where moving the phone moves your view around).
+A Google Cardboard or Gear VR headset.

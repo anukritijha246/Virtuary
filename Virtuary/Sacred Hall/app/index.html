@@ -1,0 +1,134 @@
+
+<html>
+  <head>
+    <title>Hello, WebVR! - A-Frame</title>
+    <meta name="description" content="Hello, WebVR! - A-Frame" />
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+     <script src="https://unpkg.com/aframe-teleport-controls@0.2.0/dist/aframe-teleport-controls.min.js"></script>
+    <script src="https://unpkg.com/aframe-controller-cursor-component@0.2.2/dist/aframe-controller-cursor-component.min.js"></script>
+    <script src="https://rawgit.com/dmarcos/aframe-motion-capture/master/dist/aframe-motion-capture.min.js"></script>
+     <script src="components/intersection-spawn.js"></script>
+    <script src="components/random-color.js"></script>
+    <script src="components/snap.js"></script>
+    <script>
+      AFRAME.registerComponent("handle-events", {
+        init: function() {
+          var el = this.el; // <a-box>
+          el.addEventListener("mouseenter", function() {
+            el.setAttribute("color", "#24CAFF");
+          });
+          el.addEventListener("mouseleave", function() {
+            el.setAttribute("color", "#EF2D5E");
+          });
+        }
+      });
+    </script>
+    <script>
+      AFRAME.registerComponent("click-me", {
+        init: function() {
+          var el = this.el; // <a-box>
+          el.addEventListener("click",function()
+                              {
+            el.setAttribute("color","#b80000");
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+  
+    <a-scene>
+      <a-assets>
+        <a-mixin id="voxel"
+           geometry="primitive: sphere; height: 0.05; width: 0.05"
+                scale="0.5 0.5 0.5"
+           material="shader: standard"
+           random-color
+           snap="offset: 0.1 0.1 0.1; snap: 0.2 0.2 0.2"
+        ></a-mixin>
+      </a-assets>
+      
+      <a-assets>
+    <a-asset-item id="idol" src="https://cdn.glitch.com/5327cdcb-cfbb-4e24-aa3b-54caf7de9b6a%2FAnyConv.com__Statue%20N090913.obj?v=1588089033487"></a-asset-item>
+        </a-assets>
+      <a-sky
+        src="https://cdn.glitch.com/5327cdcb-cfbb-4e24-aa3b-54caf7de9b6a%2F40469500695_028e8fc10e_k.jpg?v=1565938721218"
+        radius="40"
+        sound="src:url(https://cdn.glitch.com/5327cdcb-cfbb-4e24-aa3b-54caf7de9b6a%2Fbells-tibetan-daniel_simon.mp3?v=1588102247864); autoplay: true"
+
+      ></a-sky>
+      
+      <a-entity obj-model="obj: #idol"  scale="0.001 0.001 0.001" position="0 0 0"></a-entity>
+      <a-entity particle-system="preset: snow; particleCount: 1000"></a-entity>
+      <a-entity
+        particle-system="preset: default; color: #515; particleCount: 1000"
+        position="0 0 -10"
+      ></a-entity>
+      <a-sphere
+        src="https://cdn.glitch.com/5327cdcb-cfbb-4e24-aa3b-54caf7de9b6a%2Fb870d9ec-1139-44f9-b462-223e4a2c74e7_texture.jpg?v=1565938701622"
+        position="0 1.25 -8"
+        radius="1.25"
+        color="#EF2D5E"
+        handle-events
+      >
+      <!--  <a-plane
+          position="-15 5 -5"
+          rotation="0 0 0"
+          width="6"
+          height="3"
+          color="#00858a"
+          click-me>
+        <a-entity
+        id="text"
+        text="value: Offer Flowers; color: #BBB"
+        position="4.5 0 0"
+        scale="15 15 15"
+      ></a-entity></a-plane>-->
+        <a-entity
+        id="text"
+        text="value: Drag the cursor on the platform to offer flowers.; color: #000000"
+        position="-15 5 -5"
+        scale="15 15 15"
+      ></a-entity>
+        
+        <a-ring position="-1 1 0" color="#B96FD3"></a-ring>
+        <a-ring position="1 1 0" color="#B96FD3"></a-ring>
+        <a-cylinder
+          src="https://cdn.glitch.com/5327cdcb-cfbb-4e24-aa3b-54caf7de9b6a%2Fb870d9ec-1139-44f9-b462-223e4a2c74e7_texture.jpg?v=1565938701622"
+          position="0 -2 0"
+          radius="1"
+          height="1.5"
+        >
+        </a-cylinder>
+        <a-plane
+          position="0 -4 0"
+          rotation="-90 0 0"
+          width="10"
+          height="10"
+          color="#7BC8A4"
+        >
+          <a-torus-knot
+            position="0 1 2"
+            width="5"
+            height="5"
+            color="#FF4500"
+          ></a-torus-knot>
+        </a-plane>
+      </a-sphere>
+      <a-entity light="type: ambient; color: #444"></a-entity>
+      <a-entity
+        light="type: directional; color: #AAA"
+        position="0 1.25 -8"
+      ></a-entity>
+      
+      <!-- Camera. -->
+      <a-camera>
+        <a-cursor
+          intersection-spawn="event: click; mixin: voxel"
+        ></a-cursor>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>

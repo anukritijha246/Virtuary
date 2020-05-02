@@ -1,0 +1,8 @@
+Running Local Server
+
+1.Go into the command prompt or terminal.
+2.Navigate to the folder containing the app.
+3.Run 
+	npm install && npm start 
+4.Go to  http://localhost:3000 in your browser or http://192.168.0.1:3000, where that IP address is the IP address of your computer.
+5.The scene will appear.

@@ -1,0 +1,3 @@
+What is A-Frame?
+A-Frame is an open source framework for creating WebVR experiences using custom HTML elements. These elements use three.js and WebGL to create VR-enabled elements in a scene, without requiring developers to learn lower level APIs such as WebGL in order to build simple experiences for VR.
+
